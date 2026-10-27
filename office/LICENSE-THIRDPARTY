@@ -1,0 +1,110 @@
+Avisos de licencias de terceros — dkl2-office 1.0.0
+================================================================================
+
+El código propio de esta biblioteca (Devkron.Ext.*, archivos .dkh) se distribuye
+bajo la licencia Apache 2.0 del repositorio (archivo LICENSE).
+Copyright 2019-2026 Induxsoft Data Services S de RL de CV.
+
+El paquete dkl2-office-1.0.0.zip incluye, sin modificar, los siguientes
+componentes de terceros, cada uno bajo su propia licencia:
+
+--------------------------------------------------------------------------------
+ClosedXML 0.105.1 — ClosedXML.dll · https://github.com/ClosedXML/ClosedXML
+Licencia: MIT
+
+MIT License
+
+Copyright (c) 2016 ClosedXML
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+ClosedXML.Parser 2.0.0 — ClosedXML.Parser.dll · https://github.com/ClosedXML/ClosedXML.Parser
+Copyright (c) Jan Havlíček. Licencia: MIT (texto al final de este archivo)
+
+--------------------------------------------------------------------------------
+DocumentFormat.OpenXml 3.5.1 y DocumentFormat.OpenXml.Framework 3.5.1 (Open XML SDK)
+DocumentFormat.OpenXml.dll, DocumentFormat.OpenXml.Framework.dll · https://github.com/dotnet/Open-XML-SDK
+Licencia: MIT
+
+The MIT License (MIT)
+
+Copyright (c) .NET Foundation and Contributors
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+System.IO.Packaging 10.0.2 — System.IO.Packaging.dll · https://github.com/dotnet/runtime
+Copyright (c) .NET Foundation and Contributors. Licencia: MIT (texto al final)
+
+--------------------------------------------------------------------------------
+ExcelNumberFormat 1.1.0 — ExcelNumberFormat.dll · https://github.com/andersnm/ExcelNumberFormat
+Copyright (c) ExcelNumberFormat developers. Licencia: MIT (texto al final)
+
+--------------------------------------------------------------------------------
+RBush.Signed 4.0.0 — RBush.dll · https://github.com/viceroypenguin/RBush
+Copyright © 2017-2024 Turning Code, LLC (and others). Licencia: MIT (texto al final)
+
+--------------------------------------------------------------------------------
+SixLabors.Fonts 1.0.0 — SixLabors.Fonts.dll · https://github.com/SixLabors/Fonts
+Copyright © Six Labors. Licencia: Apache-2.0 (texto completo en LICENSE).
+Nota: se fija la versión 1.0.0 a propósito. Las versiones 2.x y 3.x de
+SixLabors.Fonts usan la "Six Labors Split License", que exige licencia comercial
+a ciertas empresas; no actualizar sin revisar esa licencia.
+
+--------------------------------------------------------------------------------
+PdfPig 0.1.16 — UglyToad.PdfPig*.dll · https://github.com/UglyToad/PdfPig
+Copyright (c) UglyToad y colaboradores. Licencia: Apache-2.0 (texto completo en LICENSE)
+
+================================================================================
+Texto de la licencia MIT (para los componentes MIT de arriba que no traen el
+suyo; cada uno con su aviso de copyright indicado):
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
