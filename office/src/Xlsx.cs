@@ -223,6 +223,7 @@ namespace Devkron.Ext.Office
                 case XLDataType.Number:
                     double d = v.GetNumber();
                     if (double.IsNaN(d) || double.IsInfinity(d)) return "";
+                    if (Math.Abs(d) >= 7.9e27) return d.ToString("R", CultureInfo.InvariantCulture); // fuera del rango de decimal
                     return Round((decimal)d);
                 case XLDataType.Boolean: return v.GetBoolean() ? 1m : 0m;
                 case XLDataType.DateTime: return DklDate(v.GetDateTime());
@@ -253,7 +254,10 @@ namespace Devkron.Ext.Office
             switch (v.Type)
             {
                 case XLDataType.Blank: return "";
-                case XLDataType.Number: return Round((decimal)v.GetNumber()).ToString(CultureInfo.InvariantCulture);
+                case XLDataType.Number:
+                    double n = v.GetNumber();
+                    if (double.IsNaN(n) || double.IsInfinity(n) || Math.Abs(n) >= 7.9e27) return n.ToString("R", CultureInfo.InvariantCulture);
+                    return Round((decimal)n).ToString(CultureInfo.InvariantCulture);
                 case XLDataType.Boolean: return v.GetBoolean() ? "TRUE" : "FALSE";
                 case XLDataType.DateTime: return v.GetDateTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
                 case XLDataType.TimeSpan: return v.GetTimeSpan().ToString("c", CultureInfo.InvariantCulture);
