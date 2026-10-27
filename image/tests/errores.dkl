@@ -1,0 +1,45 @@
+#include "dkli.dkh"
+#!
+program "prueba image errores"
+{
+    #include "functions.dkh"
+    #include "image.dkh"
+
+    t_conv:: nombre, origen, destino
+    {
+        r = image.convert(origen, destino)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_th:: nombre, origen, destino, lado
+    {
+        r = image.thumbnail(origen, destino, lado)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_comp:: nombre, archivo
+    {
+        r = image.compress(archivo, @true, @true)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    do t_conv("convert no existe", "data/no.jpg", "out/x.png")
+    do t_conv("convert extensión", "data/foto.jpg", "out/x.xyz")
+    do t_conv("convert sin extensión", "data/foto.jpg", "out/x")
+    do t_conv("convert no es imagen", "data/falsa.jpg", "out/x.png")
+    do t_conv("convert carpeta", "data/foto.jpg", "out/no/existe/x.png")
+    do t_th("thumbnail lado 0", "data/foto.jpg", "out/t.jpg", 0)
+    do t_comp("compress no existe", "data/no.jpg")
+}

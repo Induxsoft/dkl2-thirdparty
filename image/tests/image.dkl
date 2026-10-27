@@ -1,0 +1,27 @@
+#include "dkli.dkh"
+#!
+program "prueba image"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "image.dkh"
+
+    // Las pruebas trabajan sobre la copia out/w (resize y compress sobrescriben)
+    d = "out/w"
+    do print("size foto: " + to.json(image.size(d + "/foto.jpg")) + "\n")
+    do print("size falsa es nulo: " + str(isnull(image.size(d + "/falsa.jpg"))) + "\n")
+    do print("resize 400x0: " + str(image.resize(d + "/foto.jpg", 400, 0)) + " " + to.json(image.size(d + "/foto.jpg")) + "\n")
+    do print("resize 0x50: " + str(image.resize(d + "/alpha.png", 0, 50)) + " " + to.json(image.size(d + "/alpha.png")) + "\n")
+    do print("resize 100x100 deforma: " + str(image.resize(d + "/ancho.png", 100, 100)) + " " + to.json(image.size(d + "/ancho.png")) + "\n")
+    do print("resize falsa: " + str(image.resize(d + "/falsa.jpg", 10, 10)) + "\n")
+    do print("compress jpg con pérdida: " + str(image.compress(d + "/foto.jpg", @true, @true)) + "\n")
+    do print("compress gif sin pérdida (ya óptimo): " + str(image.compress(d + "/chico.gif", @true, @false)) + "\n")
+
+    do print("thumbnail 120: " + str(image.thumbnail("data/foto.jpg", "out/th.jpg", 120)) + " " + to.json(image.size("out/th.jpg")) + "\n")
+    do print("thumbnail ancho 200: " + str(image.thumbnail("data/ancho.png", "out/th_ancho.webp", 200)) + " " + to.json(image.size("out/th_ancho.webp")) + "\n")
+    do print("thumbnail no agranda: " + str(image.thumbnail("data/chico.gif", "out/th_chico.png", 500)) + " " + to.json(image.size("out/th_chico.png")) + "\n")
+    do print("convert png→jpg: " + str(image.convert("data/alpha.png", "out/alpha.jpg")) + " " + to.json(image.size("out/alpha.jpg")) + "\n")
+    do print("convert jpg→webp: " + str(image.convert("data/foto.jpg", "out/foto.webp")) + " " + to.json(image.size("out/foto.webp")) + "\n")
+    do print("newer falta el segundo: " + str(image.newer("data/foto.jpg", "data/no.jpg")) + "\n")
+    do print("newer falta el primero: " + str(image.newer("data/no.jpg", "data/foto.jpg")) + "\n")
+}

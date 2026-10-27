@@ -1,0 +1,15 @@
+convert no existe: {1} Error en 'image.convert. (image: no existe el archivo 'data/no.jpg'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+convert extensión: {1} Error en 'image.convert. (image: no se pudo convertir 'foto.jpg' a 'x.xyz': formato de destino no admitido: .xyz (se admiten jpg, png, gif, webp, bmp, tif, ico, avif, heic, pdf)Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+convert sin extensión: {1} Error en 'image.convert. (image: no se pudo convertir 'foto.jpg' a 'x': el destino 'x' no tiene extensión para elegir el formatoException has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+convert no es imagen: {1} Error en 'image.convert. (image: no se pudo convertir 'falsa.jpg' a 'x.png': InsufficientImageDataInFile `data/falsa.jpg' @ error/jpeg.c/ReadOneJPEGImage/1555Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+convert carpeta: {1} Error en 'image.convert. (image: no se pudo convertir 'foto.jpg' a 'x.png': no existe la carpeta de destino 'out/no/existe'Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+thumbnail lado 0: {1} Error en 'image.thumbnail. (image: el lado mayor de la miniatura debe ser de 1 píxel o más.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 19]
+
+compress no existe: {1} Error en 'image.compress. (image: no existe el archivo 'data/no.jpg'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 29]
+
+
