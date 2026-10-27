@@ -25,8 +25,9 @@ Descomprima `dkl2-csv-1.0.0.zip` en la carpeta de `dkl` (trae `Devkron.Ext.Csv.d
 | `csv.to_text(lista)` / `csv.to_text_sep(lista, separador)` | cadena CSV (para `httpres.text`) |
 
 `columnas_numericas` es una lista separada por comas (`"precio,existencia"`, o `""`): esas
-columnas se convierten a número con cultura invariante; vacío → `0`; lo que no es número se queda
-como texto.
+columnas se convierten a número con cultura invariante; un campo vacío queda como cadena vacía `""`
+(revise el tipo con `field.typeof` antes de sumar); si a la fila le falta el campo, vale `0`; lo que no
+es número se queda como texto.
 
 ```dkl
 #include "functions.dkh"
