@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Devkron.Ext.Image</AssemblyName>
+    <RootNamespace>Devkron.Ext.Image</RootNamespace>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Misma variante que Devkron.Magick original (Q16, HDRI, AnyCPU con nativos por plataforma) -->
+    <PackageReference Include="Magick.NET-Q16-HDRI-AnyCPU" Version="15.0.0" />
+  </ItemGroup>
+</Project>

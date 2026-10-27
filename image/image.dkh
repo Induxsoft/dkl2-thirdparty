@@ -1,0 +1,19 @@
+#include "dkli.dkh"
+#!
+module "dkl2.image"
+{
+    /*
+    image.dkh - imágenes (Devkron.Ext.Image.dll, usa Magick.NET / ImageMagick)
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta image)
+    Sustituye a magick.dkh (Devkron.Magick.dll): mismos nombres image.size, image.resize,
+    image.compress e image.newer, más image.thumbnail e image.convert.
+    */
+    ref @dkl2_image_lib = _import_library("Devkron.Ext.Image.dll")
+
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "Size", "image.size", "System.String", "*")
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "Resize", "image.resize", "System.String,System.Decimal,System.Decimal", "#")
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "Compress", "image.compress", "System.String,System.Boolean,System.Boolean", "#")
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "Thumbnail", "image.thumbnail", "System.String,System.String,System.Decimal", "#")
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "Convert", "image.convert", "System.String,System.String", "#")
+    do _map_function(@dkl2_image_lib, "Devkron.Ext.Image.Image", "WichIsNewer", "image.newer", "System.String,System.String", "#")
+}
