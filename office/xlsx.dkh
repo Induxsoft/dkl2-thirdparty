@@ -1,0 +1,15 @@
+#!
+module "dkl2.xlsx"
+{
+    /*
+    xlsx.dkh - hojas de cálculo XLSX (Devkron.Ext.Office.dll, usa ClosedXML)
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta office)
+    */
+    ref @dkl2_office_lib = _import_library("Devkron.Ext.Office.dll")
+
+    do _map_function(@dkl2_office_lib, "Devkron.Ext.Office.Xlsx", "Write", "xlsx.write", "System.String,*System.Object", "void")
+    do _map_function(@dkl2_office_lib, "Devkron.Ext.Office.Xlsx", "WriteSheets", "xlsx.write_sheets", "System.String,*System.Object", "void")
+    do _map_function(@dkl2_office_lib, "Devkron.Ext.Office.Xlsx", "ToBytes", "xlsx.to_bytes", "*System.Object", "*")
+    do _map_function(@dkl2_office_lib, "Devkron.Ext.Office.Xlsx", "Read", "xlsx.read", "System.String,System.String", "*")
+    do _map_function(@dkl2_office_lib, "Devkron.Ext.Office.Xlsx", "Sheets", "xlsx.sheets", "System.String", "*")
+}

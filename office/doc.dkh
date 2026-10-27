@@ -1,0 +1,13 @@
+#!
+module "dkl2.doc"
+{
+    /*
+    doc.dkh - texto de documentos PDF, DOCX y XLSX (Devkron.Ext.Office.dll;
+    usa PdfPig, DocumentFormat.OpenXml y ClosedXML)
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta office)
+    */
+    ref @dkl2_office_doc_lib = _import_library("Devkron.Ext.Office.dll")
+
+    do _map_function(@dkl2_office_doc_lib, "Devkron.Ext.Office.Doc", "Text", "doc.text", "System.String", "$")
+    do _map_function(@dkl2_office_doc_lib, "Devkron.Ext.Office.Doc", "Pages", "doc.pages", "System.String", "*")
+}
