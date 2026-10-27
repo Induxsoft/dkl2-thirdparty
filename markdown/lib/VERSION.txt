@@ -1,0 +1,4 @@
+Markdig 1.5.0 (lib/net10.0 del paquete NuGet markdig.1.5.0.nupkg, publicado 2026-10-24)
+https://www.nuget.org/packages/Markdig/1.5.0
+Licencia: BSD-2-Clause (ver ../LICENSE-THIRDPARTY)
+SHA-256 del DLL: ver build/pack.sh (se verifica al empaquetar)

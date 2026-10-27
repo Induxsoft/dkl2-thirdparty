@@ -1,0 +1,18 @@
+#include "dkli.dkh"
+#!
+program "prueba markdown"
+{
+    #include "functions.dkh"
+    #include "markdown.dkh"
+
+    text t
+    {
+        "# Título con acentos\n\nTexto **negrita** y _cursiva_, [enlace](https://induxsoft.net).\n\n| Clave | Precio |\n|---|---:|\n| M-1 | 120.50 |\n\n- [x] hecho\n- [ ] pendiente\n\n<div class=\"crudo\">HTML crudo</div>\n\n<script>alert(1)</script>\n\nNota al pie[^1].\n\n[^1]: La nota.\n"
+    }
+    do print("=== md.html\n" + md.html(t))
+    do print("=== md.html_safe\n" + md.html_safe(t))
+    do print("=== md2html igual a md.html: " + str(md2html(t) == md.html(t)) + "\n")
+    do print("=== vacío: [" + md.html("") + "]\n")
+    // Hallazgo documentado en el README: DisableHtml no filtra esquemas de URL en enlaces
+    do print("=== enlace javascript en html_safe: " + md.html_safe("[clic](javascript:alert(1))"))
+}
