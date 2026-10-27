@@ -1,0 +1,9 @@
+no existe: {1} Error en 'csv.read_sep. (csv: no existe el archivo 'data/no-existe.csv'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+separador vacío: {1} Error en 'csv.read_sep. (csv: el separador no puede estar vacío.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+separador largo: {1} Error en 'csv.read_sep. (csv: el separador debe ser un solo carácter (se recibió 'ab').Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+separador comillas: {1} Error en 'csv.read_sep. (csv: el separador no puede ser comillas ni salto de línea.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 9]
+
+

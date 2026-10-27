@@ -1,0 +1,36 @@
+#include "dkli.dkh"
+#!
+program "prueba csv texto"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "csv.dkh"
+
+    ref l = csv.from_text("folio,importe,cliente\nA-1,1500.75,\"Pérez, Juan\"\nA-2,-20,Ana \"La\" Ruiz\n", "importe")
+    do print("from_text: " + to.json(l) + "\n")
+    do print("from_text_sep: " + to.json(csv.from_text_sep("x|y\n1|2\n", "x,y", "|")) + "\n")
+    do print("sep=: " + to.json(csv.from_text("sep=;\na;b\n1;2\n", "")) + "\n")
+
+    ref salida = list.create()
+    new r1
+    {
+        @"clave": "P-01"
+        @"precio": 1234.5
+        @"nota": "Con \"comillas\", y coma"
+    }
+    new r2
+    {
+        @"clave": "P-02"
+        @"precio": 0.1
+        @"extra": "solo aquí"
+    }
+    do list.add(salida, r1)
+    do list.add(salida, r2)
+    do print("to_text:\n" + csv.to_text(salida))
+    do print("to_text_sep:\n" + csv.to_text_sep(salida, ";"))
+
+    do csv.write("out/escrito.csv", salida)
+    do print("ida y vuelta: " + to.json(csv.read("out/escrito.csv", "precio")) + "\n")
+    do csv.write_sep("out/escrito_tab.csv", salida, "\\t")
+    do print("ida y vuelta tab: " + to.json(csv.read("out/escrito_tab.csv", "precio")) + "\n")
+}
