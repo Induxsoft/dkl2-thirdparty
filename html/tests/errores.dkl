@@ -1,0 +1,42 @@
+#include "dkli.dkh"
+#!
+program "prueba html errores"
+{
+    #include "functions.dkh"
+    #include "html.dkh"
+    do _map_function(-1,"System.Environment","GetEnvironmentVariable","env","System.String","$")
+
+    t_url:: nombre, url, &h
+    {
+        ref d = html.from_url(url, h)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_sel:: nombre, xp
+    {
+        ref l = html.select("<p>x</p>", xp)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    base = env("HTML_TEST_BASE")
+    new nada {}
+    new corto
+    {
+        @"timeout": 1
+    }
+    do t_url("404", base + "/no-existe.html", nada)
+    do t_url("relativa", "/index.html", nada)
+    do t_url("esquema file", "file:///etc/passwd", nada)
+    do t_url("tiempo agotado", base + "/lento", corto)
+    do t_url("puerto cerrado", "http://127.0.0.1:1/", nada)
+    do t_sel("xpath inválido", "//p[")
+    do t_sel("xpath vacío", "")
+}

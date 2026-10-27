@@ -1,0 +1,34 @@
+title: Ferretería & Más
+
+description: Herramientas y tornillería | keywords: martillo, clavos
+
+meta: {"charset":"utf-8","description":"Herramientas y torniller\u00EDa","keywords":"martillo, clavos","og:title":"Ferreter\u00EDa OG"}
+
+links: ["https://tienda.ejemplo.com/productos/martillo.html","https://tienda.ejemplo.com/catalogo/clavos.html?x=1&y=2","https://ejemplo.com/pinzas","mailto:ventas@ejemplo.com"]
+
+text:
+Bienvenidos
+Precios bajos todo el año — ¡visítenos!
+Martillo
+Clavos
+Pinzas
+Arriba JS Correo Martillo otra vez
+Clave	Precio
+M-1	120.50
+
+html.text simple: [Hola mundo
+dos]
+
+select li: ["Martillo","Clavos","Pinzas"]
+
+select nada: []
+
+select_attr sku: ["M-1","C-2","P-3"]
+
+select_html: ["<a href=\"/productos/martillo.html\">Martillo</a>"]
+
+select text(): ["Bienvenidos"]
+
+parse vacío: {"url":"","title":"","meta":{},"description":"","keywords":"","links":[],"text":"","content":""}
+
+

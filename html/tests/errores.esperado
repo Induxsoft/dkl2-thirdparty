@@ -1,0 +1,15 @@
+404: {1} Error en 'html.from_url. (html: el servidor respondió 404 File not found para 'http://SERVIDOR/no-existe.html'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+relativa: {1} Error en 'html.from_url. (html: solo se admiten URL http y https ('/index.html').Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+esquema file: {1} Error en 'html.from_url. (html: solo se admiten URL http y https ('file:///etc/passwd').Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+tiempo agotado: {1} Error en 'html.from_url. (html: se agotó el tiempo de espera (1 s) al descargar 'http://SERVIDOR/lento'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+puerto cerrado: {1} Error en 'html.from_url. (html: no se pudo descargar 'http://127.0.0.1:1/': Connection refused (127.0.0.1:1)Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+xpath inválido: {1} Error en 'html.select. (html: la expresión XPath '//p[' no es válida: Expression must evaluate to a node-set.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 20]
+
+xpath vacío: {1} Error en 'html.select. (html: falta la expresión XPath.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 20]
+
+

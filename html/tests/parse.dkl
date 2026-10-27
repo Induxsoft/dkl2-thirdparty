@@ -1,0 +1,23 @@
+#include "dkli.dkh"
+#!
+program "prueba html local"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "html.dkh"
+
+    h = file.rtext("www/index.html")
+    ref d = html.parse(h, "https://tienda.ejemplo.com/catalogo/")
+    do print("title: " + d.title + "\n")
+    do print("description: " + d.description + " | keywords: " + d.keywords + "\n")
+    do print("meta: " + to.json(@@(d, "&meta")) + "\n")
+    do print("links: " + to.json(@@(d, "&links")) + "\n")
+    do print("text:\n" + d.text + "\n")
+    do print("html.text simple: [" + html.text("<div>Hola <i>mundo</i></div><p>dos</p>") + "]\n")
+    do print("select li: " + to.json(html.select(h, "//li[@class='p']")) + "\n")
+    do print("select nada: " + to.json(html.select(h, "//article")) + "\n")
+    do print("select_attr sku: " + to.json(html.select_attr(h, "//li", "data-sku")) + "\n")
+    do print("select_html: " + to.json(html.select_html(h, "//li[1]/a")) + "\n")
+    do print("select text(): " + to.json(html.select(h, "//h1/text()")) + "\n")
+    do print("parse vacío: " + to.json(html.parse("", "")) + "\n")
+}

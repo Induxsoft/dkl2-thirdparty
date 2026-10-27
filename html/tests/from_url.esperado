@@ -1,0 +1,13 @@
+status: 200 title: Ferretería & Más links: ["http://SERVIDOR/productos/martillo.html","http://SERVIDOR/clavos.html?x=1&y=2","https://ejemplo.com/pinzas","mailto:ventas@ejemplo.com"]
+
+eco 1: ["accept=text/html","authorization=Bearer abc","user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36","x-prueba=uno"]
+
+eco 2: ["accept=text/html,application/xhtml+xml","user-agent=dkl2-prueba","x-prueba=dos"]
+
+eco 3: ["accept=text/html","user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"]
+
+redir: 200 http://SERVIDOR/index.html Ferretería & Más
+
+latin1: Señal Latin1 / Niño
+
+
