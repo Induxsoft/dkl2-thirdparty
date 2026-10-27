@@ -1,0 +1,51 @@
+#include "dkli.dkh"
+#!
+program "prueba xlsx"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "xlsx.dkh"
+
+    do print("sheets: " + to.json(xlsx.sheets("data/muestra.xlsx")) + "\n")
+    do print("read primera: " + to.json(xlsx.read("data/muestra.xlsx", "")) + "\n")
+    do print("read Clientes: " + to.json(xlsx.read("data/muestra.xlsx", "Clientes")) + "\n")
+    do print("read Vacía: " + to.json(xlsx.read("data/muestra.xlsx", "Vacía")) + "\n")
+
+    ref l = list.create()
+    new r1
+    {
+        @"clave": "P-01"
+        @"precio": 1234.56
+        @"alta": 20261027.143005
+        @"nota": "ñandú"
+    }
+    new r2
+    {
+        @"clave": "P-02"
+        @"precio": 0.1
+        @"extra": "solo aquí"
+    }
+    do list.add(l, r1)
+    do list.add(l, r2)
+
+    do xlsx.write("out/una.xlsx", l)
+    do print("write → read: " + to.json(xlsx.read("out/una.xlsx", "Hoja1")) + "\n")
+
+    ref l2 = list.create()
+    new c1
+    {
+        @"rfc": "XAXX010101000"
+    }
+    do list.add(l2, c1)
+    new hojas
+    {
+        @"Productos*": l
+        @"Clientes*": l2
+    }
+    do xlsx.write_sheets("out/varias.xlsx", hojas)
+    do print("write_sheets: " + to.json(xlsx.sheets("out/varias.xlsx")) + " " + to.json(xlsx.read("out/varias.xlsx", "Clientes")) + "\n")
+
+    ref b = xlsx.to_bytes(l)
+    do file.wbytes("out/bytes.xlsx", b)
+    do print("to_bytes → read: " + to.json(xlsx.read("out/bytes.xlsx", "")) + "\n")
+}

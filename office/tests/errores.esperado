@@ -1,0 +1,17 @@
+doc no existe: {1} Error en 'doc.text. (doc: no existe el archivo 'data/no-existe.pdf'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+doc extensión: {1} Error en 'doc.text. (doc: extensión no admitida en 'texto.txt' (se admiten .pdf, .docx, .xlsx).Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+pdf roto: {1} Error en 'doc.text. (doc: no se pudo leer el PDF 'roto.pdf': Could not find any xref tables or streams in this document and could not resolve brute force positions.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 10]
+
+pages docx: {1} Error en 'doc.pages. (doc: doc.pages solo admite archivos .pdf ('muestra.docx').Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 20]
+
+xlsx hoja inexistente: {1} Error en 'xlsx.read. (xlsx: el libro no tiene la hoja 'Nada'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 30]
+
+xlsx no es libro: {1} Error en 'xlsx.read. (xlsx: no se pudo abrir 'data/texto.txt' como libro XLSX: Extension 'txt' is not supported. Supported extensions are '.xlsx', '.xlsm', '.xltx' and '.xltm'.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 30]
+
+hoja con ?: {1} Error en 'xlsx.write_sheets. (xlsx: el nombre de la hoja 'a?b' tiene caracteres no permitidos (: \ / ? * [ ]).Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 43]
+
+hoja larga: {1} Error en 'xlsx.write_sheets. (xlsx: el nombre de la hoja '1234567890123456789012345678901234' pasa de 31 caracteres.Exception has been thrown by the target of an invocation.) [errores.dkl][Ln= 43]
+
+

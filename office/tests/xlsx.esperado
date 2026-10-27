@@ -1,0 +1,15 @@
+sheets: ["Ventas","Clientes","Vac\u00EDa"]
+
+read primera: [{"folio":"F-1","fecha":20261027.143005,"importe":1500.75,"pagado":1,"cliente":"P\u00E9rez, Juan","columna_6":"x"},{"folio":"F-2","fecha":20260102.000000,"importe":0.1,"pagado":0,"cliente":"","columna_6":""},{"folio":"F-3","fecha":"","importe":3001.5,"pagado":"","cliente":"Ana","columna_6":""}]
+
+read Clientes: [{"rfc":"XAXX010101000","nombre":"P\u00FAblico en general","rfc_2":"dup"}]
+
+read Vacía: []
+
+write → read: [{"clave":"P-01","precio":1234.56,"alta":20261027.143005,"nota":"\u00F1and\u00FA","extra":""},{"clave":"P-02","precio":0.1,"alta":"","nota":"","extra":"solo aqu\u00ED"}]
+
+write_sheets: ["Productos","Clientes"] [{"rfc":"XAXX010101000"}]
+
+to_bytes → read: [{"clave":"P-01","precio":1234.56,"alta":20261027.143005,"nota":"\u00F1and\u00FA","extra":""},{"clave":"P-02","precio":0.1,"alta":"","nota":"","extra":"solo aqu\u00ED"}]
+
+

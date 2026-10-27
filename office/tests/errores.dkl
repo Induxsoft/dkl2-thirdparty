@@ -1,0 +1,60 @@
+#include "dkli.dkh"
+#!
+program "prueba office errores"
+{
+    #include "functions.dkh"
+    #include "xlsx.dkh"
+    #include "doc.dkh"
+
+    t_text:: nombre, archivo
+    {
+        s = doc.text(archivo)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_pages:: nombre, archivo
+    {
+        ref l = doc.pages(archivo)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_read:: nombre, archivo, hoja
+    {
+        ref l = xlsx.read(archivo, hoja)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    t_hoja:: nombre, hoja
+    {
+        ref l = list.create()
+        new h {}
+        h<hoja + "*">: l
+        do xlsx.write_sheets("out/mal.xlsx", h)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    do t_text("doc no existe", "data/no-existe.pdf")
+    do t_text("doc extensión", "data/texto.txt")
+    do t_text("pdf roto", "data/roto.pdf")
+    do t_pages("pages docx", "data/muestra.docx")
+    do t_read("xlsx hoja inexistente", "data/muestra.xlsx", "Nada")
+    do t_read("xlsx no es libro", "data/texto.txt", "")
+    do t_hoja("hoja con ?", "a?b")
+    do t_hoja("hoja larga", "1234567890123456789012345678901234")
+}

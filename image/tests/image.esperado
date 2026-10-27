@@ -1,0 +1,31 @@
+size foto: {"height":600,"width":800,"size_kb":30.29}
+
+size falsa es nulo: 1
+
+resize 400x0: 1 {"height":300,"width":400,"size_kb":11.33}
+
+resize 0x50: 1 {"height":50,"width":75,"size_kb":1.31}
+
+resize 100x100 deforma: 1 {"height":100,"width":100,"size_kb":0.4}
+
+resize falsa: 0
+
+compress jpg con pérdida: 1
+
+compress gif sin pérdida (ya óptimo): 0
+
+thumbnail 120: 1 {"height":90,"width":120,"size_kb":1.52}
+
+thumbnail ancho 200: 1 {"height":50,"width":200,"size_kb":0.15}
+
+thumbnail no agranda: 1 {"height":64,"width":64,"size_kb":4.49}
+
+convert png→jpg: 1 {"height":200,"width":300,"size_kb":6.81}
+
+convert jpg→webp: 1 {"height":600,"width":800,"size_kb":5.48}
+
+newer falta el segundo: -2
+
+newer falta el primero: -1
+
+

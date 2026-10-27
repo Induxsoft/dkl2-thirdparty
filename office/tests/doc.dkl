@@ -1,0 +1,14 @@
+#include "dkli.dkh"
+#!
+program "prueba doc"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "doc.dkh"
+
+    do print("pdf text:\n" + doc.text("data/muestra.pdf") + "\n")
+    ref p = doc.pages("data/muestra.pdf")
+    do print("pdf pages: " + str(list.count(p)) + " " + to.json(p) + "\n")
+    do print("docx text:\n" + doc.text("data/muestra.docx") + "\n")
+    do print("xlsx text:\n" + doc.text("data/muestra.xlsx"))
+}

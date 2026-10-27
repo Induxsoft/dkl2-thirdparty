@@ -1,0 +1,38 @@
+#include "dkli.dkh"
+#!
+program "prueba html.from_url"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "html.dkh"
+    do _map_function(-1,"System.Environment","GetEnvironmentVariable","env","System.String","$")
+
+    base = env("HTML_TEST_BASE")
+    ref d = html.from_url(base + "/index.html", @null)
+    do print("status: " + str(d.status) + " title: " + d.title + " links: " + to.json(@@(d, "&links")) + "\n")
+
+    new h1
+    {
+        @"X-Prueba": "uno"
+        @"Authorization": "Bearer abc"
+    }
+    ref e1 = html.from_url(base + "/eco", h1)
+    do print("eco 1: " + to.json(html.select(html.get(base + "/eco", h1), "//p")) + "\n")
+
+    new h2
+    {
+        @"X-Prueba": "dos"
+        @"User-Agent": "dkl2-prueba"
+        @"Accept": "text/html,application/xhtml+xml"
+    }
+    do print("eco 2: " + to.json(html.select(html.get(base + "/eco", h2), "//p")) + "\n")
+
+    // Sin encabezados: no deben quedar los de las llamadas anteriores
+    new vacio {}
+    do print("eco 3: " + to.json(html.select(html.get(base + "/eco", vacio), "//p")) + "\n")
+
+    ref r = html.from_url(base + "/redir", @null)
+    do print("redir: " + str(r.status) + " " + r.final_url + " " + r.title + "\n")
+    ref l1 = html.from_url(base + "/latin1.html", @null)
+    do print("latin1: " + l1.title + " / " + l1.text + "\n")
+}

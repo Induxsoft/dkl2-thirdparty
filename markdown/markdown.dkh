@@ -1,0 +1,40 @@
+#include "dkli.dkh"
+#!
+module "dkl2.markdown"
+{
+    /*
+    markdown.dkh - Markdown a HTML con Markdig (solo envoltura, sin DLL propio)
+    Markdig Copyright (c) 2018-2019, Alexandre Mutel. BSD 2-Clause "Simplified" License.
+    https://github.com/xoofx/markdig
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta markdown)
+    Sustituye a markdig.dkl de dkl-web: conserva md2html.
+    */
+    ref @dkl2_markdig_lib = _import_library("Markdig.dll")
+
+    do _map_function(@dkl2_markdig_lib, "Markdig.Markdown", "ToHtml", "md._to_html", "System.String,*Markdig.MarkdownPipeline,*Markdig.MarkdownParserContext", "$")
+    do _map_function(@dkl2_markdig_lib, "Markdig.MarkdownExtensions", "UseAdvancedExtensions", "md._use_advanced", "*Markdig.MarkdownPipelineBuilder", "*")
+    do _map_function(@dkl2_markdig_lib, "Markdig.MarkdownExtensions", "DisableHtml", "md._disable_html", "*Markdig.MarkdownPipelineBuilder", "*")
+    do _map_function(@dkl2_markdig_lib, "Markdig.MarkdownPipelineBuilder", "Build", "md._build", "void", "*")
+
+    // Canal completo: extensiones avanzadas (tablas, listas de tareas, notas al pie, etc.), HTML crudo permitido
+    ref @dkl2_md_pipeline = _invoke(md._use_advanced(_new(@dkl2_markdig_lib, "Markdig.MarkdownPipelineBuilder")), "md._build")
+
+    // Canal seguro: mismas extensiones, sin HTML crudo (las etiquetas se escapan como texto)
+    ref @dkl2_md_pipeline_safe = _invoke(md._disable_html(md._use_advanced(_new(@dkl2_markdig_lib, "Markdig.MarkdownPipelineBuilder"))), "md._build")
+
+    md.html:: texto
+    {
+        return md._to_html(texto, @dkl2_md_pipeline, @null)
+    }
+
+    md.html_safe:: texto
+    {
+        return md._to_html(texto, @dkl2_md_pipeline_safe, @null)
+    }
+
+    // Compatibilidad con markdig.dkl de dkl-web
+    md2html:: md
+    {
+        return md._to_html(md, @dkl2_md_pipeline, @null)
+    }
+}

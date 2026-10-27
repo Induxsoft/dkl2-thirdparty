@@ -1,0 +1,19 @@
+#include "dkli.dkh"
+#!
+program "prueba csv.read"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "csv.dkh"
+
+    do print("coma: " + to.json(csv.read("data/coma.csv", "id,precio")) + "\n")
+    do print("puntoycoma: " + to.json(csv.read("data/puntoycoma.csv", "id,precio")) + "\n")
+    do print("tab: " + to.json(csv.read("data/tab.csv", "id,precio")) + "\n")
+    do print("bom: " + to.json(csv.read("data/bom.csv", "existencia")) + "\n")
+    do print("irregular: " + to.json(csv.read("data/irregular.csv", "")) + "\n")
+    do print("dup: " + to.json(csv.read("data/dup.csv", "")) + "\n")
+    do print("solo_encabezado: " + str(list.count(csv.read("data/solo_encabezado.csv", ""))) + "\n")
+    do print("read_sep coma en archivo ;: " + to.json(csv.read_sep("data/puntoycoma.csv", "", ",")) + "\n")
+    do print("read_sep tab: " + to.json(csv.read_sep("data/tab.csv", "id", "\\t")) + "\n")
+    do print("detect: [" + csv.detect("a;b;c\n1;2;3") + "] [" + csv.detect("a\tb\n1\t2") + "] [" + csv.detect("a,b") + "]\n")
+}

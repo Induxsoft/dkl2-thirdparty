@@ -1,0 +1,21 @@
+from_text: [{"folio":"A-1","importe":1500.75,"cliente":"P\u00E9rez, Juan"},{"folio":"A-2","importe":-20,"cliente":"Ana \"La\" Ruiz"}]
+
+from_text_sep: [{"x":1,"y":2}]
+
+sep=: [{"a":"1","b":"2"}]
+
+to_text:
+clave,precio,nota,extra
+P-01,1234.5,"Con ""comillas"", y coma",
+P-02,0.1,,solo aquí
+
+to_text_sep:
+clave;precio;nota;extra
+P-01;1234.5;"Con ""comillas"", y coma";
+P-02;0.1;;solo aquí
+
+ida y vuelta: [{"clave":"P-01","precio":1234.5,"nota":"Con \"comillas\", y coma","extra":""},{"clave":"P-02","precio":0.1,"nota":"","extra":"solo aqu\u00ED"}]
+
+ida y vuelta tab: [{"clave":"P-01","precio":1234.5,"nota":"Con \"comillas\", y coma","extra":""},{"clave":"P-02","precio":0.1,"nota":"","extra":"solo aqu\u00ED"}]
+
+

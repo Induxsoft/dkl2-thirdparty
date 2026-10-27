@@ -1,0 +1,21 @@
+coma: [{"id":1,"nombre":"Martillo","precio":120.50},{"id":2,"nombre":"Clavo, caja","precio":35},{"id":3,"nombre":"Pinza 8\"","precio":99.9}]
+
+puntoycoma: [{"id":1,"nombre":"Martillo","precio":120.50},{"id":2,"nombre":"Clavo; caja","precio":35}]
+
+tab: [{"id":1,"nombre":"Martillo","precio":120.50},{"id":2,"nombre":"Taladro","precio":1500.00}]
+
+bom: [{"clave":"A1","descripci\u00F3n":"Texto con \"comillas\"","existencia":10},{"clave":"A2","descripci\u00F3n":"Multi\nl\u00EDnea","existencia":-3},{"clave":"A3","descripci\u00F3n":"","existencia":""}]
+
+irregular: [{"a":"1","b":"2","c":null},{"a":"4","b":"5","c":"6"}]
+
+dup: [{"a":"1","a_2":"2","columna_3":"3","b":"4"}]
+
+solo_encabezado: 0
+
+read_sep coma en archivo ;: [{"id;nombre;precio":"1;Martillo;120"},{"id;nombre;precio":"2;\"Clavo; caja\";35"}]
+
+read_sep tab: [{"id":1,"nombre":"Martillo","precio":"120.50"},{"id":2,"nombre":"Taladro","precio":"1,500.00"}]
+
+detect: [;] [	] [,]
+
+

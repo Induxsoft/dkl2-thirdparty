@@ -1,0 +1,26 @@
+pdf text:
+Factura de prueba pagina uno
+Total: 1,500.75 MXN
+Segunda pagina
+
+pdf pages: 2 ["Factura de prueba pagina uno\nTotal: 1,500.75 MXN","Segunda pagina"]
+
+docx text:
+Contrato de prueba
+Primer párrafo con acentos: ñandú.
+Segundo	con tabulador
+celda A
+celda B
+
+xlsx text:
+--- Hoja: Ventas ---
+folio	fecha	importe	pagado	cliente	
+F-1	2026-10-27 14:30:05	1500.75	TRUE	Pérez, Juan	x	
+F-2	2026-01-02 00:00:00	0.1	FALSE	
+F-3		Ana	
+--- Hoja: Clientes ---
+rfc	nombre	rfc	
+XAXX010101000	Público en general	dup	
+--- Hoja: Vacía ---
+
+

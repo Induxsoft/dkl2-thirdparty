@@ -1,0 +1,37 @@
+Avisos de licencias de terceros — dkl2-image 1.0.0
+================================================================================
+
+El código propio de esta biblioteca (Devkron.Ext.*, archivos .dkh) se distribuye
+bajo la licencia Apache 2.0 del repositorio (archivo LICENSE).
+Copyright 2019-2026 Induxsoft Data Services S de RL de CV.
+
+El paquete dkl2-image-1.0.0.zip incluye, sin modificar, los siguientes
+componentes de terceros, cada uno bajo su propia licencia:
+
+--------------------------------------------------------------------------------
+Magick.NET 15.0.0 (Magick.NET-Q16-HDRI-AnyCPU, Magick.NET.Core)
+Magick.NET-Q16-HDRI-AnyCPU.dll, Magick.NET.Core.dll · https://github.com/dlemstra/Magick.NET
+Copyright 2013-2026 Dirk Lemstra. Licencia: Apache-2.0 (texto completo en LICENSE)
+
+--------------------------------------------------------------------------------
+ImageMagick 7.1.2-33 (2026-10-10), incluido en los nativos de Magick.NET:
+Magick.Native-Q16-HDRI-x64.dll.so (Linux x64) y Magick.Native-Q16-HDRI-x64.dll (Windows x64)
+https://imagemagick.org · Copyright © 1999 ImageMagick Studio LLC
+Licencia: ImageMagick License (https://imagemagick.org/license/), una licencia
+derivada de Apache 2.0, compatible con GPLv3, que permite uso comercial y
+redistribución conservando el aviso de copyright y la licencia.
+
+Los nativos además incluyen bibliotecas de terceros (aom, brotli,
+bzip2, cairo, libde265, openexr, libffi, fontconfig, freetype, fribidi,
+gdk-pixbuf, glib, harfbuzz, libheif, libhwy, imath, libjpeg-turbo, libjxl, lcms,
+liblqr, liblzma, openh264, openjpeg, openjph, pango, pixman, libpng, libraqm,
+libraw, librsvg, libtiff, libwebp, libxml2, libzip, zlib, zstd...). Sus licencias
+(BSD, MIT, zlib, MPL, LGPL, entre otras) y avisos de copyright están completos en:
+
+    image/NOTICE-Magick.NET.txt   (en el zip: dkl2-image.NOTICE-Magick.NET.txt)
+
+que es el archivo Notice.txt publicado por Magick.NET 15.0.0, sin modificar.
+Importante: varias de esas bibliotecas son LGPL (por ejemplo cairo, glib, pango,
+librsvg, gdk-pixbuf, fribidi, libraw); quien redistribuya el zip debe conservar
+ese aviso y respetar sus condiciones (entre ellas, permitir sustituir la
+biblioteca nativa).

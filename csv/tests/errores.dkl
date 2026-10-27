@@ -1,0 +1,22 @@
+#include "dkli.dkh"
+#!
+program "prueba csv errores"
+{
+    #include "functions.dkh"
+    #include "csv.dkh"
+
+    prueba:: nombre, archivo, sep
+    {
+        ref l = csv.read_sep(archivo, "", sep)
+        do print(nombre + ": sin error\n")
+        return 0
+        exception
+        {
+            do print(nombre + ": " + last_error() + "\n")
+        }
+    }
+    do prueba("no existe", "data/no-existe.csv", ",")
+    do prueba("separador vacío", "data/coma.csv", "")
+    do prueba("separador largo", "data/coma.csv", "ab")
+    do prueba("separador comillas", "data/coma.csv", "\"")
+}

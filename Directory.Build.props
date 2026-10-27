@@ -1,0 +1,21 @@
+<Project>
+  <!-- Configuración común de las bibliotecas de terceros de Devkron 2 -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <OutputType>Library</OutputType>
+    <Company>Induxsoft Data Services S de RL de CV</Company>
+    <Product>Devkron</Product>
+    <Copyright>Copyright © 2019-2026 Induxsoft Data Services S de RL de CV</Copyright>
+    <Authors>Induxsoft</Authors>
+    <NeutralLanguage>es-MX</NeutralLanguage>
+    <SatelliteResourceLanguages>es</SatelliteResourceLanguages>
+    <!-- Las dependencias de NuGet se copian a la salida para empaquetarlas junto a dkl -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+</Project>

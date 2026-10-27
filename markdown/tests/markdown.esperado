@@ -1,0 +1,73 @@
+=== md.html
+<h1 id="titulo-con-acentos">Título con acentos</h1>
+<p>Texto <strong>negrita</strong> y <em>cursiva</em>, <a href="https://induxsoft.net">enlace</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th style="text-align: right;">Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-1</td>
+<td style="text-align: right;">120.50</td>
+</tr>
+</tbody>
+</table>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> hecho</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> pendiente</li>
+</ul>
+<div class="crudo">HTML crudo</div>
+<script>alert(1)</script>
+<p>Nota al pie<a id="fnref:1" href="#fn:1" class="footnote-ref"><sup>1</sup></a>.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p>La nota.<a href="#fnref:1" class="footnote-back-ref">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+=== md.html_safe
+<h1 id="titulo-con-acentos">Título con acentos</h1>
+<p>Texto <strong>negrita</strong> y <em>cursiva</em>, <a href="https://induxsoft.net">enlace</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th style="text-align: right;">Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-1</td>
+<td style="text-align: right;">120.50</td>
+</tr>
+</tbody>
+</table>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> hecho</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> pendiente</li>
+</ul>
+<p>&lt;div class=&quot;crudo&quot;&gt;HTML crudo&lt;/div&gt;</p>
+<p>&lt;script&gt;alert(1)&lt;/script&gt;</p>
+<p>Nota al pie<a id="fnref:1" href="#fn:1" class="footnote-ref"><sup>1</sup></a>.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p>La nota.<a href="#fnref:1" class="footnote-back-ref">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+=== md2html igual a md.html: 1
+
+=== vacío: []
+
+=== enlace javascript en html_safe: <p><a href="javascript:alert(1)">clic</a></p>
+
+

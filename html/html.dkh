@@ -1,0 +1,19 @@
+#include "dkli.dkh"
+#!
+module "dkl2.html"
+{
+    /*
+    html.dkh - lectura de páginas HTML (Devkron.Ext.Html.dll, usa HtmlAgilityPack)
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta html)
+    html.encode, html.decode y html.attrs NO están aquí: van con el motor (text.dkh).
+    */
+    ref @dkl2_html_lib = _import_library("Devkron.Ext.Html.dll")
+
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "Parse", "html.parse", "System.String,System.String", "*")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "FromUrl", "html.from_url", "System.String,*System.Object", "*")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "Get", "html.get", "System.String,*System.Object", "$")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "Text", "html.text", "System.String", "$")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "Select", "html.select", "System.String,System.String", "*")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "SelectAttr", "html.select_attr", "System.String,System.String,System.String", "*")
+    do _map_function(@dkl2_html_lib, "Devkron.Ext.Html.Html", "SelectHtml", "html.select_html", "System.String,System.String", "*")
+}

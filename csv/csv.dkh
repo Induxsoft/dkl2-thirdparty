@@ -1,0 +1,20 @@
+#include "dkli.dkh"
+#!
+module "dkl2.csv"
+{
+    /*
+    csv.dkh - lectura y escritura de CSV (Devkron.Ext.Csv.dll, usa CsvHelper)
+    Repositorio: https://github.com/Induxsoft/dkl2-thirdparty (carpeta csv)
+    */
+    ref @dkl2_csv_lib = _import_library("Devkron.Ext.Csv.dll")
+
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "Read", "csv.read", "System.String,System.String", "*")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "ReadSep", "csv.read_sep", "System.String,System.String,System.String", "*")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "FromText", "csv.from_text", "System.String,System.String", "*")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "FromTextSep", "csv.from_text_sep", "System.String,System.String,System.String", "*")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "Detect", "csv.detect", "System.String", "$")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "Write", "csv.write", "System.String,*System.Object", "void")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "WriteSep", "csv.write_sep", "System.String,*System.Object,System.String", "void")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "ToText", "csv.to_text", "*System.Object", "$")
+    do _map_function(@dkl2_csv_lib, "Devkron.Ext.Csv.Csv", "ToTextSep", "csv.to_text_sep", "*System.Object,System.String", "$")
+}
